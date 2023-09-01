@@ -1,0 +1,15 @@
+{
+  "name": "twitter2any",
+  "version": "0.1.0",
+  "description": "Twitter 2 Any Feed",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eniamza",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "rettiwt-api": "^2.1.0"
+  }
+}
