@@ -1,8 +1,14 @@
 // COOKIE
 require('dotenv').config()
-const fs = require('fs');
+const fs = require('fs'); //FS Requiring
+const recordfile = "./record.json"
+const record = require(recordfile);
 
-const {lastTweetTime,LastTweetID} = require("./record.json")
+const {fetchlastTweet} = require("./modules/functions")
+
+const {lastTweetTime,LastTweetID} = require("./record.json") //Importing file to keep track of the last Tweet
+
+let check_duration = 3600000 // Interval For Schecking
 
 const { Rettiwt } = require('rettiwt-api');
 
@@ -12,9 +18,7 @@ rettiwt.tweet.search({
 	fromUsers: ['DooggiesNFT']
 })
 .then(data => {
-	console.log(Date.parse(data.list[5].createdAt))
-	console.log(Date.parse("Thu Aug 31 18:00:01 +0000 2023"))
-	lastTweetTime = 11111111111111111
+	fetchlastTweet(data)
 })
 .catch(err => {
 	console.log(err)
