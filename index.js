@@ -32,11 +32,11 @@ const rettiwt = new Rettiwt(process.env.COOKIE);
 
 let newTweet
 
-setInterval(checkNew, 5000);
+setInterval(checkNew, 36000);
 
 function checkNew() {
 	rettiwt.tweet.search({
-		fromUsers: ['Eniamza']
+		fromUsers: ['DooggiesNFT']
 	})
 	.then(data => {
 		
